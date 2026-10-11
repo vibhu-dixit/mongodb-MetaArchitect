@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b0e">
+  <title>HarnessEvolve — Returns Operations Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="shell">
+    <header class="island" aria-label="HarnessEvolve dashboard">
+      <a class="brand" href="/" aria-label="HarnessEvolve home"><span class="brand-mark">H</span><span>Harness<span class="brand-light">Evolve</span></span></a>
+      <div class="nav-meta"><span class="live-dot"></span><span id="connection-label">CONNECTING</span><span class="nav-divider"></span><span>MODEL · <b id="model-name">checking</b></span></div>
+      <a class="trace-link" href="#telemetry">RAINDROP TRACE <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-symbol">◈</span> RECURSIVE HARNESSING · RETURNS OPERATIONS</div>
+          <h1>One failure.<br><em>A smarter agent.</em></h1>
+          <p class="hero-intro">Watch the fixed and adaptive harnesses face the same return cases. Raindrop captures the evidence, the harness learns, and every proposed fix goes through replay.</p>
+          <div class="hero-actions"><button id="run-button" class="run-button" type="button" disabled><span id="run-label">START DEMO</span><span class="button-orbit" aria-hidden="true">↗</span></button><span class="paper-label"><span class="paper-check">✓</span> SYNTHETIC CASES · SIMULATED REFUNDS ONLY</span></div>
+          <p id="config-note" class="config-note" hidden></p>
+        </div>
+        <aside class="active-panel shell-card">
+          <div class="active-inner">
+            <div class="panel-heading"><span class="micro-label">ACTIVE HARNESS</span><span class="status-chip" id="active-status"><i></i> SYNCING</span></div>
+            <div class="version-row"><div><span class="version-prefix">GEN</span><strong id="active-generation">—</strong></div><span class="version-id" id="active-version">Connecting to Atlas</span></div>
+            <div class="panel-rule"></div>
+            <div class="stack-row"><span>MODEL PROVIDER</span><b id="model-state">CHECKING</b></div>
+            <div class="stack-row"><span>ATLAS CASE STORE</span><b id="atlas-state">CHECKING</b></div>
+            <div class="stack-row"><span>RAINDROP SIGNAL</span><b id="raindrop-state">CHECKING</b></div>
+            <div class="active-foot"><span class="pulse-ring"></span><span>Promotion requires every case to pass</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="run-section" id="run-section" aria-live="polite">
+        <div class="run-heading"><div><div class="micro-label">PAIRED CASE REVIEW</div><h2>Same cases. Different harness.</h2></div><span id="run-state" class="run-state">AWAITING RUN</span></div>
+        <div class="progress-strip"><span class="progress-track"><i id="progress-bar"></i></span><span id="progress-copy">Atlas cases → Raindrop diagnosis → improve → replay</span></div>
+        <div class="review-layout">
+          <aside class="case-rail" aria-label="Return case queue">
+            <div class="case-rail-head"><span>CASE QUEUE</span><span id="case-count">READY</span></div>
+            <div class="case-key"><span><i class="fixed-key"></i>FIXED</span><span><i class="adaptive-key"></i>ADAPTIVE</span></div>
+            <div id="case-selector" class="case-selector" role="tablist" aria-label="Select a return case"><div class="empty-state">Cases load when the demo starts.</div></div>
+            <div class="case-rail-foot"><span class="rail-sync"><i></i> PAIRED REVIEW</span><span id="selected-case-label">Select a case to compare both agents</span></div>
+          </aside>
+          <div class="comparison-grid">
+          <article class="agent-panel control-panel shell-card">
+            <div class="agent-panel-inner">
+              <div class="agent-panel-top"><span class="agent-number">01</span><div class="agent-title"><div class="micro-label">FIXED · NO SELF-IMPROVEMENT</div><h3 id="baseline-heading">Control harness</h3></div><span id="baseline-score" class="score neutral">READY</span></div>
+              <p class="agent-description">The original agent handles each return with the same tools and rules, even after mistakes.</p>
+              <div id="control-cases" class="case-list"><div class="empty-state">Start the demo to review the return cases.</div></div>
+              <div id="baseline-metrics" class="metric-row"><div><span>CASES PASSED</span><b>—</b></div><div><span>SIMULATED REFUNDS</span><b>—</b></div><div><span>POLICY ERRORS</span><b>—</b></div></div>
+              <div class="side-trace-heading"><span>AGENT ACTIVITY</span><span>FIXED RULES</span></div>
+              <div id="control-trace" class="side-trace"><span class="trace-placeholder">Waiting for the control run…</span></div>
+            </div>
+          </article>
+          <article class="agent-panel adaptive-panel shell-card">
+            <div class="agent-panel-inner">
+              <div class="agent-panel-top"><span class="agent-number">02</span><div class="agent-title"><div class="micro-label">RAINDROP-GUIDED · SELF-IMPROVING</div><h3 id="candidate-heading">Adaptive harness</h3></div><span id="candidate-score" class="score neutral">READY</span></div>
+              <p class="agent-description">Failure traces become coaching evidence. The harness updates its tools, rules, or context, then replays every case.</p>
+              <div id="adaptive-cases" class="case-list"><div class="empty-state">Start the demo to review the return cases.</div></div>
+              <div id="candidate-metrics" class="metric-row"><div><span>CASES PASSED</span><b>—</b></div><div><span>SIMULATED REFUNDS</span><b>—</b></div><div><span>GENERATION</span><b>—</b></div></div>
+              <div class="diagnosis-box" id="diagnosis-box"><div class="diagnosis-head"><span class="micro-label">RAINDROP COACHING SIGNAL</span><span id="diagnosis-source" class="source-tag">AWAITING RUN</span></div><div id="adaptive-diagnosis" class="diagnosis-content">Raindrop will surface the missing evidence and decision rule behind each failed case.</div></div>
+              <div class="side-trace-heading"><span>ADAPTIVE AGENT ACTIVITY</span><span id="adaptive-attempt">WAITING</span></div>
+              <div id="adaptive-trace" class="side-trace"><span class="trace-placeholder">Waiting for the adaptive run…</span></div>
+            </div>
+          </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="manifest-panel shell-card"><div class="manifest-inner"><div class="section-top small-top"><div><div class="micro-label">HARNESS UPDATE</div><h2>What changed</h2></div><span class="diff-count" id="diff-count">NO PATCH YET</span></div><div id="manifest-diff" class="manifest-diff"><div class="empty-state">Updated tools, evidence rules, and decision guardrails will appear here.</div></div></div></article>
+        <article class="telemetry-panel shell-card" id="telemetry"><div class="telemetry-inner"><div class="section-top small-top"><div><div class="micro-label">RAINDROP · RUN EVIDENCE</div><h2>Trace feed</h2></div><span class="trace-live" id="trace-status"><i></i> WAITING</span></div><div class="trace-meta"><span><b id="trace-count">00</b> EVENTS</span><span id="trace-provider">LOCAL RUN FEED · CONNECTING</span></div><div id="event-feed" class="event-feed" aria-live="polite"><div class="empty-state">Agent decisions, Atlas lookups, diagnoses, and promotion events will appear here.</div></div></div></article>
+      </section>
+
+      <section class="lineage-section"><div class="lineage-title"><div class="micro-label">MONGODB ATLAS · VERSION LINEAGE</div><h2>Every improvement is reviewable.</h2></div><div id="lineage" class="lineage-list"><div class="empty-state">Connect Atlas to inspect harness generations.</div></div></section>
+      <footer><span>HarnessEvolve <i>·</i> simulated returns operations lab</span><span>SYNTHETIC RECORDS <i>·</i> NO PAYMENT CONNECTION</span></footer>
+    </main>
+  </div>
+</body>
+</html>

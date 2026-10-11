@@ -1,0 +1,18 @@
+[project]
+name = "harness-evolve"
+version = "0.1.0"
+description = "A self-improving simulated returns harness with Raindrop coaching and Atlas versioning"
+requires-python = ">=3.10"
+dependencies = ["openai>=1.30", "pymongo[srv]>=4.6", "python-dotenv>=1.0", "raindrop-ai>=0.0.75", "raindrop-query"]
+
+[project.scripts]
+harness-evolve = "harness_evolve:main"
+
+[tool.setuptools]
+py-modules = ["harness_evolve", "dashboard_server"]
+
+[tool.setuptools.packages.find]
+include = ["harness_evolve_ui"]
+
+[tool.setuptools.package-data]
+harness_evolve_ui = ["index.html", "styles.css", "app.js"]
